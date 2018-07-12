@@ -1,6 +1,6 @@
 "ComplexInputType": {
 	"allOf": [{
-		"$ref": "#/components/schemas/dataDescriptionType"
+		"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/dataDescriptionType.json"
 	},
 	{
 		"type": "object",

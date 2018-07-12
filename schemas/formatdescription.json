@@ -1,6 +1,6 @@
 "formatDescription": {
 	"allOf": [{
-		"$ref": "#/components/schemas/format"
+		"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/format.jsno"
 	},
 	{
 		"type": "object",

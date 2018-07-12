@@ -1,6 +1,6 @@
 "dataDescriptionType": {
 	"allOf": [{
-		"$ref": "#/components/schemas/descriptionType"
+		"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/descriptionType.json"
 	},
 	{
 		"type": "object",
@@ -10,7 +10,7 @@
 			"formats": {
 				"type": "array",
 				"items": {
-					"$ref": "#/components/schemas/formatDescription"
+					"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/formatDescription.json"
 				}
 			}
 		}

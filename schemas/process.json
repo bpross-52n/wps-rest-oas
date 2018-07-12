@@ -1,47 +1,50 @@
-process" : {
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/descriptionType"
-        }, {
-          "type" : "object",
-          "required" : [ "id" ],
-          "properties" : {
-            "inputs" : {
-              "type" : "array",
-              "items" : {
-                "oneOf" : [ {
-                  "$ref" : "#/components/schemas/LiteralInputType"
-                }, {
-                  "$ref" : "#/components/schemas/ComplexInputType"
-                }, {
-                  "$ref" : "#/components/schemas/BoundingBoxInputType"
-                } ]
-              }
-            },
-            "outputs" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/components/schemas/outputDescription"
-              }
-            },
-            "version" : {
-              "type" : "string"
-            },
-            "jobControlOptions" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/components/schemas/jobControlOptions"
-              }
-            },
-            "outputTransmission" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/components/schemas/transmissionMode"
-              }
-            },
-            "executeEndpoint" : {
-              "type" : "string",
-              "format" : "url"
-            }
-          }
-        } ]
-      }
+"process": {
+	"allOf": [{
+		"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/descriptionType.json"
+	},
+	{
+		"type": "object",
+		"required": ["id"],
+		"properties": {
+			"inputs": {
+				"type": "array",
+				"items": {
+					"oneOf": [{
+						"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/literalInputType.json"
+					},
+					{
+						"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/complexInputType.json"
+					},
+					{
+						"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/boundingBoxInputType.json"
+					}]
+				}
+			},
+			"outputs": {
+				"type": "array",
+				"items": {
+					"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/outputDescription.json"
+				}
+			},
+			"version": {
+				"type": "string"
+			},
+			"jobControlOptions": {
+				"type": "array",
+				"items": {
+					"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/jobControlOptions.json"
+				}
+			},
+			"outputTransmission": {
+				"type": "array",
+				"items": {
+					"$ref": "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/transmissionMode.json"
+				}
+			},
+			"executeEndpoint": {
+				"type": "string",
+				"format": "url"
+			}
+		}
+	}]
+}
