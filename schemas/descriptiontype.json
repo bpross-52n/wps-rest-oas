@@ -1,0 +1,27 @@
+"descriptionType": {
+	"type": "object",
+	"required": ["id"],
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		},
+		"abstract": {
+			"type": "string"
+		},
+		"keywords": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"metadata": {
+			"type": "array",
+			"items": {
+				"$ref": "#/components/schemas/metadata"
+			}
+		}
+	}
+}

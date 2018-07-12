@@ -1,0 +1,47 @@
+process" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/descriptionType"
+        }, {
+          "type" : "object",
+          "required" : [ "id" ],
+          "properties" : {
+            "inputs" : {
+              "type" : "array",
+              "items" : {
+                "oneOf" : [ {
+                  "$ref" : "#/components/schemas/LiteralInputType"
+                }, {
+                  "$ref" : "#/components/schemas/ComplexInputType"
+                }, {
+                  "$ref" : "#/components/schemas/BoundingBoxInputType"
+                } ]
+              }
+            },
+            "outputs" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/outputDescription"
+              }
+            },
+            "version" : {
+              "type" : "string"
+            },
+            "jobControlOptions" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/jobControlOptions"
+              }
+            },
+            "outputTransmission" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/transmissionMode"
+              }
+            },
+            "executeEndpoint" : {
+              "type" : "string",
+              "format" : "url"
+            }
+          }
+        } ]
+      }
