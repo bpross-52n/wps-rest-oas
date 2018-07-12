@@ -526,7 +526,7 @@
         "required" : [ "process" ],
         "properties" : {
           "process" : {
-            "$ref" : "#/components/schemas/process"
+            "$ref" : "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/process.json"
           }
         }
       },
