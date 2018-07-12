@@ -86,7 +86,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/processCollection"
+                  "$ref" : "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/processCollection.yaml"
                 }
               }
             }
@@ -526,7 +526,7 @@
         "required" : [ "process" ],
         "properties" : {
           "process" : {
-            "$ref" : "https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/process.json"
+            "$ref" : "#/components/schemas/process"
           }
         }
       },
