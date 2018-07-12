@@ -1,0 +1,9 @@
+processCollection:
+  type: object
+  required:
+    - processes
+  properties:
+    processes:
+      type: array
+      items:
+        $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/processSummary'

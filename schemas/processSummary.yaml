@@ -1,0 +1,15 @@
+processSummary:
+        allOf:
+           - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/descriptionType'
+           - type: object
+             required:
+               - version
+             properties:
+               version:
+                 type: string
+               jobControlOptions:
+                 type: array
+                 items: 
+                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/jobControlOptions'
+               processDescriptionURL:
+                 type: string
