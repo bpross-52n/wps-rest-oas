@@ -588,7 +588,6 @@ components:
           required:
               - id
               - value
-              - x
           properties:
               id:
                 type: string
