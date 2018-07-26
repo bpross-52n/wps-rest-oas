@@ -434,13 +434,43 @@ components:
              - type: object
                required:
                   - formats
+                  - literalDataDomain
                properties:
                    minOccurs:
                      type: integer
                    maxOccurs:
                      type: integer
-                   LiteralDataDomain:
-                     type: object
+                   literalDataDomain:
+                     $ref: '#/components/schemas/LiteralDataDomain'
+      LiteralDataDomain:
+          type: object
+          required: 
+              - valueDefinition
+          properties:
+              dataType:
+                type: string
+              valueDefinition:
+                type: object
+                properties:
+                   defaultValue:
+                      type: string
+                   allowedValues:
+                      $ref: '#/components/schemas/allowedValues'
+      allowedValues:
+          oneOf:
+             - $ref: '#/components/schemas/values'
+             - $ref: '#/components/schemas/range'
+      values:
+          type: array
+      range: 
+          type: object
+          properties:
+             mimimumValue:
+                type: string
+             maximumValue:
+                type: string
+             spacing:
+                type: string
       ComplexInputType:
           allOf:
              - $ref: '#/components/schemas/dataDescriptionType'
