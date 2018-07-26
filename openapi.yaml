@@ -586,7 +586,15 @@ components:
                  - value
               properties:
                  value:
-                    type: string
+                    $ref: '#/components/schemas/inputValue'
+      inputValue:
+         oneOf:
+            - $ref: '#/components/schemas/value'
+            - $ref: '#/components/schemas/reference'
+      value:
+         type: string
+      reference:
+         type: string
       output:
          allOf:
             - $ref: '#/components/schemas/dataType'
