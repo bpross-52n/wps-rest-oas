@@ -589,11 +589,11 @@ components:
                     $ref: '#/components/schemas/valueType'
       valueType:
          oneOf:
-            - $ref: '#/components/schemas/value'
-            - $ref: '#/components/schemas/reference'
-      value:
+            - $ref: '#/components/schemas/inlineValue'
+            - $ref: '#/components/schemas/valueReference'
+      inlineValue:
          type: string
-      reference:
+      valueReference:
          type: string
       output:
          allOf:
