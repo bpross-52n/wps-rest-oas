@@ -121,11 +121,15 @@ paths:
                           title: width
                           abstract: The buffer width
                           formats: 
-                             - mimeType: application/json
-                               maximumMegabytes: 3
-                               default: true
-                             - mimeType: application/x-zipped-shp
-                               maximumMegabytes: 3
+                             - mimeType: text/plain
+                          literalDataDomain:
+                             dataType:
+                                 "double"
+                             valueDefinition:
+                                 defaultValue:
+                                    "1000"
+                             uom:
+                                "meters"
                      outputs:
                            - id: result
                              title: result
@@ -456,6 +460,8 @@ components:
                       type: string
                    allowedValues:
                       $ref: '#/components/schemas/allowedValues'
+              uom:
+                type: string
       allowedValues:
           oneOf:
              - $ref: '#/components/schemas/values'
