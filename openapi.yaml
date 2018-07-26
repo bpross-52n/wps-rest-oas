@@ -173,7 +173,7 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/jobList'
+                  $ref: '#/components/schemas/jobCollection'
         '404':
           description: 'The process with id {id} does not exist.'
           content:
@@ -558,7 +558,7 @@ components:
                type: string
             href:
                type: string
-      jobList:
+      jobCollection:
          type: object
          properties:
              jobs:
