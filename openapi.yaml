@@ -93,7 +93,7 @@ paths:
             required: true
             schema:
               type: string
-            example: my.test.process
+            example: buffer
       responses:
         '200':
           description: A process description.
@@ -103,13 +103,23 @@ paths:
                   $ref: '#/components/schemas/processOffering'
                 example: 
                    process:
-                     id: my.test.process
+                     id: buffer
                      title: Example process 
                      abstract: Example process 
-                     keywords: [example, process]
+                     keywords: [example, process, buffer]
                      inputs: 
-                        - id: input1
-                          title: input title 1
+                        - id: features
+                          title: features
+                          abstract: The features to buffer
+                          formats: 
+                             - mimeType: application/json
+                               maximumMegabytes: 3
+                               default: true
+                             - mimeType: application/x-zipped-shp
+                               maximumMegabytes: 3 
+                        - id: width
+                          title: width
+                          abstract: The buffer width
                           formats: 
                              - mimeType: application/json
                                maximumMegabytes: 3
@@ -117,8 +127,9 @@ paths:
                              - mimeType: application/x-zipped-shp
                                maximumMegabytes: 3
                      outputs:
-                           - id: output1
-                             title: output title 1
+                           - id: result
+                             title: result
+                             abstract: The buffered features
                              formats: 
                                 - mimeType: application/json
                                   default: true
