@@ -586,8 +586,8 @@ components:
                  - value
               properties:
                  value:
-                    $ref: '#/components/schemas/inputValue'
-      inputValue:
+                    $ref: '#/components/schemas/valueType'
+      valueType:
          oneOf:
             - $ref: '#/components/schemas/value'
             - $ref: '#/components/schemas/reference'
@@ -647,7 +647,7 @@ components:
               id:
                 type: string
               value:
-                type: string #TODO differentiate between value and reference, also for input data
+                 $ref: '#/components/schemas/valueType'
 
 tags:
   - name: Capabilities
