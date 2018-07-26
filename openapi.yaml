@@ -141,7 +141,7 @@ paths:
                      version: 1.1
                      jobControlOptions: [sync-execute, async-execute]
                      outputTransmission: [value, reference]
-                     executeEndpoint: https://virtserver.swaggerhub.com/geoprocessing/WPS/0.01/processes/my.test.process
+                     executeEndpoint: https://virtserver.swaggerhub.com/geoprocessing/WPS/0.01/processes/buffer
         '404':
           description: 'The process with id {id} does not exist.'
           content:
