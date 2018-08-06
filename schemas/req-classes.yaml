@@ -1,9 +1,11 @@
-type: object
-required:
-  - conformsTo
-properties:
-  conformsTo:
-    type: array
-    items:
-      type: string
-      example: "http://www.opengis.net/spec/wps-rest/1.0/req/core"
+req-classes:
+    type: object
+    required:
+      - conformsTo
+    properties:
+      conformsTo:
+        type: array
+        items:
+          type: string
+          example: "http://www.opengis.net/spec/wps-rest/1.0/req/core"
+    
