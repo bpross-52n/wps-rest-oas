@@ -2,6 +2,4 @@ jobCollection:
    type: object
    properties:
        jobs:
-          type: array
-          items:
-             type: string
+          type: string
