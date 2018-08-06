@@ -1,0 +1,9 @@
+dataType:
+   type: object
+   required: 
+       - id
+   properties:
+        id:
+          type: string
+        format:
+          $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/format.yaml'

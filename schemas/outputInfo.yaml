@@ -1,0 +1,10 @@
+outputInfo:
+    type: object
+    required:
+        - id
+        - value
+    properties:
+        id:
+          type: string
+        value:
+           $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/valueType.yaml'

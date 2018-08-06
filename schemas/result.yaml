@@ -1,0 +1,9 @@
+result:
+    type: object
+    required:
+        - outputs
+    properties:
+       outputs:
+           type: array
+           items:
+              $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/outputInfo.yaml'
