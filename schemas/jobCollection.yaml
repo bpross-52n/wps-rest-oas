@@ -4,4 +4,6 @@ jobCollection:
     - jobs
   properties:
     jobs:
-      type: string
+      type: array
+        items:
+          type: string

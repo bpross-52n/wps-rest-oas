@@ -1,6 +1,6 @@
 complexInputType:
     allOf:
-       - $ref: '#/components/schemas/dataDescriptionType'
+       - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/dataDescriptionType.yaml'
        - type: object
          required:
             - formats
