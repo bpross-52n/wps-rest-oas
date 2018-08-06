@@ -204,7 +204,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/execute.yaml'
+                $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/execute.yaml'
       responses:
         '201':
           description: Started execution. Created job.
