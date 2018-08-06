@@ -1,0 +1,10 @@
+formatDescription:
+    allOf:
+       - $ref: '#/components/schemas/format'
+       - type: object
+         properties:
+             maximumMegabytes:
+                type: integer
+             default:
+                type: boolean
+                default: false

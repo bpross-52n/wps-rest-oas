@@ -1,0 +1,11 @@
+complexInputType:
+    allOf:
+       - $ref: '#/components/schemas/dataDescriptionType'
+       - type: object
+         required:
+            - formats
+         properties:
+             minOccurs:
+               type: integer
+             maxOccurs:
+               type: integer

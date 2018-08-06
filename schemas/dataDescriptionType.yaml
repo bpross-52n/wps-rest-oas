@@ -1,0 +1,12 @@
+dataDescriptionType:
+    allOf:
+       - $ref: '#/components/schemas/descriptionType'
+       - type: object
+         required:
+            - id
+            - formats
+         properties:
+               formats:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/formatDescription'

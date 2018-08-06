@@ -1,0 +1,7 @@
+processOffering:
+  type: object
+  required:
+    - process
+  properties:
+     process:
+        $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/process.yaml'

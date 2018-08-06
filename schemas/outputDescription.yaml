@@ -1,0 +1,3 @@
+outputDescription:
+    allOf:
+       - $ref: '#/components/schemas/dataDescriptionType'

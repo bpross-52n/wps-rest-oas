@@ -1,0 +1,31 @@
+process:
+    allOf:
+       - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/descriptionType.yaml'
+       - type: object
+         required:
+           - id
+         properties:
+            inputs:
+              type: array
+              items: 
+                 oneOf:
+                     - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/literalInputType.yaml'
+                     - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/complexInputType.yaml'
+                     - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/boundingBoxInputType.yaml'
+            outputs:
+              type: array
+              items: 
+                 $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/outputDescription.yaml'
+            version:
+              type: string
+            jobControlOptions:
+               type: array
+               items: 
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/jobControlOptions.yaml'
+            outputTransmission:
+                type: array
+                items: 
+                   $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/transmissionMode.yaml'
+            executeEndpoint:
+                type: string
+                format: url
