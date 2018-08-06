@@ -1,4 +1,4 @@
-joCollection:
+jobCollection:
   type: object
   properties:
     jobs:
