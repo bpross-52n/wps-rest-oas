@@ -10,6 +10,10 @@ processSummary:
                jobControlOptions:
                  type: array
                  items: 
-                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/jobControlOptions.yaml'
+                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/jobControlOptions.yaml'                    
+               outputTransmission:
+                 type: array
+                 items: 
+                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/outputTransmission.yaml'
                processDescriptionURL:
                  type: string
