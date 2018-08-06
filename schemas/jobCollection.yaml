@@ -1,5 +1,5 @@
-jobCollection:
-   type: object
-   properties:
-       jobs:
-          type: string
+joCollection:
+  type: object
+  properties:
+    jobs:
+      type: string
