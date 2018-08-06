@@ -35,7 +35,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/exception'
+                $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
   /conformance:
     get:
       summary: information about standards that this API conforms to
@@ -51,13 +51,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/req-classes'
+                $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/req-classes.yaml'
         default:
           description: An error occured.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/exception'
+                $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
   /processes:
     get:
       summary: retrieve available processes
@@ -73,13 +73,13 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/processCollection'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/processCollection.yaml'
         default:
           description: An error occured.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/exception'
+                $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
   /processes/{id}:
     get:
       summary: retrieve a process description
@@ -100,7 +100,7 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/processOffering'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/processOffering.yaml'
                 example: 
                    process:
                      id: buffer
@@ -147,13 +147,13 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/exception'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
         default:
           description: An error occured.
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/exception'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
   /processes/{id}/jobs:
     get:
       summary: retrieve the list of jobs for a process.
@@ -173,19 +173,19 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/jobCollection'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/jobCollection.yaml'
         '404':
           description: 'The process with id {id} does not exist.'
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/exception'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
         default:
           description: An error occured.
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/exception'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
     post: #TODO sync execute
       summary: execute a process.
       operationId: execute
@@ -204,7 +204,7 @@ paths:
         content:
           application/json:
             schema:
-                $ref: '#/components/schemas/execute'
+                $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/execute.yaml'
       responses:
         '201':
           description: Started execution. Created job.
@@ -218,13 +218,13 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/exception'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
         default:
           description: An error occured.
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/exception'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
   /processes/{id}/jobs/{jobID}:
     get:
       summary: retrieve the status of a job
@@ -250,19 +250,19 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/statusInfo'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/statusInfo.yaml'
         '404':
           description: 'The process with id {id} or the job with id {jobID} does not exist.'
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/exception'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
         default:
           description: An error occured.
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/exception'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
   /processes/{id}/jobs/{jobID}/result:
     get:
       summary: retrieve the result(s) of a job
@@ -288,367 +288,19 @@ paths:
           content:
             application/json:
                 schema:
-                  $ref: '#/components/schemas/result'
+                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/result.yaml'
         '404':
           description: 'The process with id {id} or the job with id {jobID} does not exist.'
           content:
             application/json:
                   schema:
-                    $ref: '#/components/schemas/exception'
+                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
         default:
           description: An error occured.
           content:
             application/json:
                   schema:
-                    $ref: '#/components/schemas/exception'
-components:
-    schemas:
-      exception:
-        type: object
-        required:
-          - code
-        properties:
-          code:
-            type: string
-          description:
-            type: string
-      root:
-          type: object
-          required:
-            - links
-          properties:
-            links:
-              type: array
-              items:
-                $ref: '#/components/schemas/link'
-              example:
-                - href: 'http://data.example.org/'
-                  rel: self
-                  type: application/json
-                  title: this document
-                - href: 'http://data.example.org/api'
-                  rel: service
-                  type: application/openapi+json;version=3.0
-                  title: the API definition
-                - href: 'http://data.example.org/conformance'
-                  rel: conformance
-                  type: application/json
-                  title: WPS 2.0 REST/JSON Binding conformance classes implemented by this server
-                - href: 'http://data.example.org/processes'
-                  rel: data
-                  type: application/json
-                  title: Metadata about the processes
-      req-classes:
-        type: object
-        required:
-          - conformsTo
-        properties:
-          conformsTo:
-            type: array
-            items:
-              type: string
-            example:
-              - 'http://www.opengis.net/spec/wps-rest/req/core'
-              - 'http://www.opengis.net/spec/wps-rest/req/oas30'
-              - 'http://www.opengis.net/spec/wps-rest/req/html'
-      link:
-        type: object
-        required:
-          - href
-        properties:
-          href:
-            type: string
-          rel:
-            type: string
-            example: prev
-          type:
-            type: string
-            example: application/geo+json
-          hreflang:
-            type: string
-            example: en
-      processCollection:
-        type: object
-        required:
-          - processes
-        properties:
-          processes:
-            type: array
-            items:
-              $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/processSummary.yaml'
-      processOffering:
-        type: object
-        required:
-          - process
-        properties:
-           process:
-              $ref: '#/components/schemas/process'
-      process:
-          allOf:
-             - $ref: '#/components/schemas/descriptionType'
-             - type: object
-               required:
-                 - id
-               properties:
-                  inputs:
-                    type: array
-                    items: 
-                       oneOf:
-                           - $ref: '#/components/schemas/LiteralInputType'
-                           - $ref: '#/components/schemas/ComplexInputType'
-                           - $ref: '#/components/schemas/BoundingBoxInputType'
-                  outputs:
-                    type: array
-                    items: 
-                       $ref: '#/components/schemas/outputDescription'
-                  version:
-                    type: string
-                  jobControlOptions:
-                     type: array
-                     items: 
-                        $ref: '#/components/schemas/jobControlOptions'
-                  outputTransmission:
-                      type: array
-                      items: 
-                         $ref: '#/components/schemas/transmissionMode'
-                  executeEndpoint:
-                      type: string
-                      format: url
-      jobControlOptions:
-          type: string
-          enum:
-            - sync-execute
-            - async-execute
-      transmissionMode:
-          type: string
-          enum:
-            - value
-            - reference
-      inputDescription:
-          oneOf:
-             - $ref: '#/components/schemas/LiteralInputType'
-             - $ref: '#/components/schemas/ComplexInputType'
-             - $ref: '#/components/schemas/BoundingBoxInputType'
-      outputDescription:
-          allOf:
-             - $ref: '#/components/schemas/dataDescriptionType'
-      LiteralInputType:
-          allOf:
-             - $ref: '#/components/schemas/dataDescriptionType'
-             - type: object
-               required:
-                  - formats
-                  - literalDataDomain
-               properties:
-                   minOccurs:
-                     type: integer
-                   maxOccurs:
-                     type: integer
-                   literalDataDomain:
-                     $ref: '#/components/schemas/LiteralDataDomain'
-      LiteralDataDomain:
-          type: object
-          required: 
-              - valueDefinition
-          properties:
-              dataType:
-                type: string
-              valueDefinition:
-                type: object
-                properties:
-                   defaultValue:
-                      type: string
-                   allowedValues:
-                      $ref: '#/components/schemas/allowedValues'
-              uom:
-                type: string
-      allowedValues:
-          oneOf:
-             - $ref: '#/components/schemas/values'
-             - $ref: '#/components/schemas/range'
-      values:
-          type: array
-      range: 
-          type: object
-          properties:
-             mimimumValue:
-                type: string
-             maximumValue:
-                type: string
-             spacing:
-                type: string
-      ComplexInputType:
-          allOf:
-             - $ref: '#/components/schemas/dataDescriptionType'
-             - type: object
-               required:
-                  - formats
-               properties:
-                   minOccurs:
-                     type: integer
-                   maxOccurs:
-                     type: integer
-      BoundingBoxInputType:
-          allOf:
-             - $ref: '#/components/schemas/dataDescriptionType'
-             - type: object
-               required:
-                  - formats
-               properties:
-                   minOccurs:
-                     type: integer
-                   maxOccurs:
-                     type: integer
-      formatDescription:
-          allOf:
-             - $ref: '#/components/schemas/format'
-             - type: object
-               properties:
-                   maximumMegabytes:
-                      type: integer
-                   default:
-                      type: boolean
-                      default: false
-      format:
-        type: object
-        required:
-          - mimeType
-        properties:
-            mimeType:
-               type: string
-            schema:
-               type: string
-            encoding:
-               type: string
-      dataDescriptionType:
-          allOf:
-             - $ref: '#/components/schemas/descriptionType'
-             - type: object
-               required:
-                  - id
-                  - formats
-               properties:
-                     formats:
-                        type: array
-                        items:
-                          $ref: '#/components/schemas/formatDescription'
-      descriptionType:
-        type: object
-        required:
-             - id
-        properties:
-              id:
-                type: string
-              title:
-                type: string
-              abstract:
-                type: string
-              keywords:
-                 type: array
-                 items:
-                    type: string
-              metadata:
-                 type: array
-                 items:
-                     $ref: '#/components/schemas/metadata'
-      metadata:
-         type: object
-         properties:
-            role:
-               type: string
-            href:
-               type: string
-      jobCollection:
-         type: object
-         properties:
-             jobs:
-                type: array
-                items:
-                   type: string
-      execute:
-         type: object
-         required:
-             - outputs
-         properties:
-             inputs:
-                type: array
-                items:
-                     $ref: '#/components/schemas/input'
-             outputs:
-                type: array
-                items:
-                     $ref: '#/components/schemas/output'
-      input:
-         allOf:
-            - $ref: '#/components/schemas/dataType'
-            - type: object
-              required:
-                 - value
-              properties:
-                 value:
-                    $ref: '#/components/schemas/valueType'
-      valueType:
-         oneOf:
-            - $ref: '#/components/schemas/inlineValue'
-            - $ref: '#/components/schemas/valueReference'
-      inlineValue:
-         type: string
-      valueReference:
-         type: string
-      output:
-         allOf:
-            - $ref: '#/components/schemas/dataType'
-            - type: object
-              properties:
-                 transmissionMode:
-                    $ref: '#/components/schemas/transmissionMode'
-      dataType:
-         type: object
-         required: 
-             - id
-         properties:
-              id:
-                type: string
-              format:
-                $ref: '#/components/schemas/format'
-      statusInfo:
-          type: object
-          required:
-              - status
-          properties:
-             status:
-                type: string
-                enum:
-                  - accepted
-                  - running
-                  - successful
-                  - failed
-             message:
-                type: string
-             progress:
-                type: integer
-                minimum: 0
-                maximum: 100
-      result:
-          type: object
-          required:
-              - outputs
-          properties:
-             outputs:
-                 type: array
-                 items:
-                    $ref: '#/components/schemas/outputInfo'
-      outputInfo:
-          type: object
-          required:
-              - id
-              - value
-          properties:
-              id:
-                type: string
-              value:
-                 $ref: '#/components/schemas/valueType'
-
+                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
 tags:
   - name: Capabilities
     description: >-
