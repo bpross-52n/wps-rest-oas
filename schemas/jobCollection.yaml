@@ -1,5 +1,7 @@
 jobCollection:
   type: object
+  required:
+    - jobs
   properties:
     jobs:
       type: string
