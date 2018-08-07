@@ -103,9 +103,9 @@ paths:
                 example: 
                    process:
                      id: buffer
-                     title: Example process 
-                     abstract: Example process 
-                     keywords: [example, process, buffer]
+                     title: Buffer process 
+                     abstract: Buffer process 
+                     keywords: [process, buffer]
                      inputs: 
                         - id: features
                           title: features
