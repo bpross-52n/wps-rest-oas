@@ -1,19 +1,20 @@
 processSummary:
-        allOf:
-           - $ref: 'descriptionType.yaml'
-           - type: object
-             required:
-               - version
-             properties:
-               version:
-                 type: string
-               jobControlOptions:
-                 type: array
-                 items: 
-                    $ref: 'jobControlOptions.yaml'                    
-               outputTransmission:
-                 type: array
-                 items: 
-                    $ref: 'transmissionMode.yaml'
-               processDescriptionURL:
-                 type: string
+    allOf:
+       - $ref: 'descriptionType.yaml'
+       - type: object
+         required:
+           - version
+         properties:
+           version:
+             type: string
+           jobControlOptions:
+             type: array
+             items: 
+                $ref: 'jobControlOptions.yaml'                    
+           outputTransmission:
+             type: array
+             items: 
+                $ref: 'transmissionMode.yaml'
+           processDescriptionURL:
+             type: string
+             format: url
