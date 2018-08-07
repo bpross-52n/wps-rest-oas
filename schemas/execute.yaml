@@ -6,8 +6,8 @@ execute:
     inputs:
       type: array
       items:
-        $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/input.yaml'
+        $ref: 'input.yaml'
     outputs:
       type: array
       items:
-        $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/output.yaml'
+        $ref: 'output.yaml'

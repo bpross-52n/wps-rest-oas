@@ -1,6 +1,6 @@
 processSummary:
         allOf:
-           - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/descriptionType.yaml'
+           - $ref: 'descriptionType.yaml'
            - type: object
              required:
                - version
@@ -10,10 +10,10 @@ processSummary:
                jobControlOptions:
                  type: array
                  items: 
-                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/jobControlOptions.yaml'                    
+                    $ref: 'jobControlOptions.yaml'                    
                outputTransmission:
                  type: array
                  items: 
-                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/transmissionMode.yaml'
+                    $ref: 'transmissionMode.yaml'
                processDescriptionURL:
                  type: string

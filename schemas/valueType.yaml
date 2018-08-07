@@ -1,4 +1,4 @@
 valueType:
    oneOf:
-      - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/inlineValue.yaml'
-      - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/valueReference.yaml'
+      - $ref: 'inlineValue.yaml'
+      - $ref: 'valueReference.yaml'

@@ -6,4 +6,4 @@ dataType:
         id:
           type: string
         format:
-          $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/format.yaml'
+          $ref: 'format.yaml'

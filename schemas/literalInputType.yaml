@@ -1,6 +1,6 @@
 literalInputType:
     allOf:
-       - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/dataDescriptionType.yaml'
+       - $ref: 'dataDescriptionType.yaml'
        - type: object
          required:
             - formats

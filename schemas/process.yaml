@@ -1,6 +1,6 @@
 process:
     allOf:
-       - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/descriptionType.yaml'
+       - $ref: 'descriptionType.yaml'
        - type: object
          required:
            - id
@@ -9,23 +9,23 @@ process:
               type: array
               items: 
                  oneOf:
-                     - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/literalInputType.yaml'
-                     - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/complexInputType.yaml'
-                     - $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/boundingBoxInputType.yaml'
+                     - $ref: 'literalInputType.yaml'
+                     - $ref: 'complexInputType.yaml'
+                     - $ref: 'boundingBoxInputType.yaml'
             outputs:
               type: array
               items: 
-                 $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/outputDescription.yaml'
+                 $ref: 'outputDescription.yaml'
             version:
               type: string
             jobControlOptions:
                type: array
                items: 
-                  $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/jobControlOptions.yaml'
+                  $ref: 'jobControlOptions.yaml'
             outputTransmission:
                 type: array
                 items: 
-                   $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/transmissionMode.yaml'
+                   $ref: 'transmissionMode.yaml'
             executeEndpoint:
                 type: string
                 format: url
