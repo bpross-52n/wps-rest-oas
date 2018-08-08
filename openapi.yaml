@@ -294,6 +294,12 @@ paths:
             application/json:
                   schema:
                     $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
+        '500':
+          description: 'An exception happened during the execution of the job.'
+          content:
+            application/json:
+                  schema:
+                    $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
         default:
           description: An error occured.
           content:
