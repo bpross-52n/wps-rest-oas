@@ -2,9 +2,12 @@ processSummary:
     allOf:
        - $ref: 'descriptionType.yaml'
        - type: object
-         required:
-           - version
-         properties:
+           required:
+            - id
+            - version
+           properties:
+            id:
+             type: string
            version:
              type: string
            jobControlOptions:
