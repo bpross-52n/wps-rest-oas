@@ -1,6 +1,6 @@
 process:
     allOf:
-       - $ref: 'descriptionType.yaml'
+       - $ref: 'processSummary.yaml'
        - type: object
          required:
            - id
@@ -8,24 +8,11 @@ process:
             inputs:
               type: array
               items: 
-                 oneOf:
-                     - $ref: 'literalInputType.yaml'
-                     - $ref: 'complexInputType.yaml'
-                     - $ref: 'boundingBoxInputType.yaml'
+                 $ref: 'inputDescription.yaml'
             outputs:
               type: array
               items: 
                  $ref: 'outputDescription.yaml'
-            version:
-              type: string
-            jobControlOptions:
-               type: array
-               items: 
-                  $ref: 'jobControlOptions.yaml'
-            outputTransmission:
-                type: array
-                items: 
-                   $ref: 'transmissionMode.yaml'
             executeEndpoint:
                 type: string
                 format: url

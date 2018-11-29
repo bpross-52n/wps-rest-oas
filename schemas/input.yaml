@@ -1,9 +1,13 @@
 input:
-   allOf:
-      - $ref: 'dataType.yaml'
-      - type: object
-        required:
-           - value
-        properties:
-           value:
-              $ref: 'valueType.yaml'
+    type: object
+    required:
+      - id
+      - input
+    properties:
+       id:
+         type: string
+       input:
+         oneOf:
+           - $ref: 'complexData.yaml'
+           - $ref: 'literalData.yaml'
+           - $ref: 'boundingBoxData.yaml'

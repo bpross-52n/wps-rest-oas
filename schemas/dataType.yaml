@@ -1,9 +1,5 @@
 dataType:
    type: object
-   required: 
-       - id
    properties:
-        id:
-          type: string
         format:
           $ref: 'format.yaml'

@@ -4,9 +4,3 @@ dataDescriptionType:
        - type: object
          required:
             - id
-            - formats
-         properties:
-               formats:
-                  type: array
-                  items:
-                    $ref: 'formatDescription.yaml'
