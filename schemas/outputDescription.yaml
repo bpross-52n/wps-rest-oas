@@ -5,6 +5,6 @@ outputDescription:
          properties:
              output:
                oneOf:
-                  - $ref: 'ComplexDataType.yaml'
-                  - $ref: 'LiteralDataType.yaml'
-                  - $ref: 'BoundingBoxDataType.yaml'
+                  - $ref: 'complexDataType.yaml'
+                  - $ref: 'literalDataType.yaml'
+                  - $ref: 'boundingBoxDataType.yaml'
