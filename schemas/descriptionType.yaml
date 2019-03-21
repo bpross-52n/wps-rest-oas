@@ -7,7 +7,7 @@ descriptionType:
           type: string
         title:
           type: string
-        abstract:
+        description:
           type: string
         keywords:
            type: array
