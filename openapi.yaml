@@ -43,7 +43,7 @@ paths:
         list all requirements classes specified in a standard (e.g., WPS REST/JSON Binding Core) that the server conforms to
       operationId: getRequirementsClasses
       tags:
-        - Capabilities
+        - Conformance
       responses:
         '200':
           description: the URIs of all requirements classes supported by the server
@@ -79,7 +79,7 @@ paths:
             application/json:
               schema:
                 $ref: 'https://raw.githubusercontent.com/bpross-52n/wps-rest-oas/master/schemas/exception.yaml'
-  /processes/{id}:
+  /processes/{id}/:
     get:
       summary: retrieve a process description
       operationId: getProcessDescription
@@ -104,12 +104,12 @@ paths:
                    process:
                      id: buffer
                      title: Buffer process 
-                     abstract: Buffer process 
+                     description: Buffer process 
                      keywords: [process, buffer]
                      inputs: 
                         - id: features
                           title: features
-                          abstract: The features to buffer
+                          description: The features to buffer
                           formats: 
                              - mimeType: application/json
                                maximumMegabytes: 3
@@ -118,7 +118,7 @@ paths:
                                maximumMegabytes: 3 
                         - id: width
                           title: width
-                          abstract: The buffer width
+                          description: The width of the buffer
                           formats: 
                              - mimeType: text/plain
                           literalDataDomain:
@@ -132,7 +132,7 @@ paths:
                      outputs:
                            - id: result
                              title: result
-                             abstract: The buffered features
+                             description: The buffered features
                              formats: 
                                 - mimeType: application/json
                                   default: true
@@ -196,7 +196,7 @@ paths:
             description: The id of a process.
             required: true
             schema:
-              type: integer
+              type: string
       requestBody:
         description: Mandatory execute request JSON
         required: true
